@@ -1,4 +1,22 @@
 #!/usr/bin/env python3
+                #LOGIN SCRIPT
+print ("THIS IS A SCRIPT FOR COMPUTER HEALTH CHECK")
+CorrectUsername = "BARAKA"
+CorrectPassword = 123456
+
+loop = 'true'
+while (loop == 'true'):
+    username = input("Please enter your username: ")
+    if (username == CorrectUsername):
+        password = int(input("Please enter your password: ")) # Input function always return a string, to convert a string to integer, we use int
+        if (password == CorrectPassword):
+            print ("Logged in successfully as " + username)
+            loop = 'false'
+        else:
+            print ("Password incorrect!")
+    else:
+        print ("Username incorrect!")
+
                 #SHUTIL AND PSUTIL MODULES
 import shutil
 import psutil
@@ -14,11 +32,14 @@ print (F'VIRTUAL MEMORY:\n {psutil.virtual_memory()}')
 print ('\t')
 print (f'dISK PARTIONS:\n {psutil.disk_partitions()}')
 print ('\t')
-                    #INPUT FUNCTION
-name = input ('To check your computer health, Please Enter your name:')
-password = int(input ('Please Enter your password:')) # Input function always return a string, to convert a string to integer, we use int
-assert password == 12345, 'The password is incorrect'
-print (f'Hello {name}')
+                    #INPUT FUNCTION, TRY AND EXCEPT FUNCTION
+try:
+    name = input ('For Computer Health Check, Please Enter your Computer Name:')
+    assert name == 'BARAKA', 'You are not BARAKA, but proceed'
+except AssertionError as msg: #this prevents our code to break whenever encours an error
+    print (msg)
+    print (f'WELCOME {name}, ')
+
 print ('\t')
                 #HEALTH CHECK IN A COMPUTER
 print ('COMPUTER HEALTH STATUS')

@@ -1,6 +1,11 @@
-name = input ('Enter your Name:')
-assert len (name) > 6, "your name has less than 6 characters"
-print ('Hello ' +  name + ',you are welcome')
+try:
+    name = input ('Enter your Name: ')
+    assert len (name) > 6, "your name has less than 6 characters"
+    print ('Hello ' +  name + ',you are welcome')
+except AssertionError as msg: #this prevents our code to break whenever encours an error
+    print (msg)
+    input ('Re-Enter your Name with 6 or more characters: ')
+
 print ('\t')
 
 def test_sum():
