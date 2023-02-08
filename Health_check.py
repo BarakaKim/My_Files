@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
                 #LOGIN SCRIPT
-print ("THIS IS A SCRIPT FOR COMPUTER HEALTH CHECK")
+print ("AUTOMATIC COMPUTER HEALTH CHECK")
 CorrectUsername = "BARAKA"
 CorrectPassword = 123456
 
