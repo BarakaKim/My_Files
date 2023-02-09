@@ -7,6 +7,7 @@ except AssertionError as msg: #this prevents our code to break whenever encours 
     input ('Re-Enter your Name with 6 or more characters: ')
 
 print ('\t')
+print ('\t')
 
 def test_sum():
     """ Testing the function of adding number"""
