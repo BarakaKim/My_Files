@@ -18,19 +18,6 @@ while (loop == 'true'):
         print ("Username incorrect!")
 
                 #SHUTIL AND PSUTIL MODULES
-import shutil
-import psutil
-                    #SHUTIL
-du = shutil.disk_usage ('/') # or shutil.disk_usage ('\\') using windows path
-#print (psutil.disk_usage('/')) #disk usage using psutil
-print (f'FREE DISK:{(du.free/du.total)*100} %') #the percentage of free disk
-                     #PSUTIL
-print (f'CPU PERCENTAGE: {psutil.cpu_percent(interval=1)}%')
-print (f'CPU COUNT:{psutil.cpu_count ()}')
-print ('\t')
-print (F'VIRTUAL MEMORY:\n {psutil.virtual_memory()}')
-print ('\t')
-print (f'dISK PARTIONS:\n {psutil.disk_partitions()}')
 print ('\t')
                     #INPUT FUNCTION, TRY AND EXCEPT FUNCTION
 try:
@@ -48,6 +35,7 @@ def check_disk_usage(disk):
     """Verifies that there's enough free space on disk"""
     du = shutil.disk_usage(disk)
     free = du.free / du.total * 100
+    print (free)
     return free > 20
 def check_cpu_usage():
     """Verifies that there's enough unused CPU"""
