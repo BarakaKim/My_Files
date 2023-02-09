@@ -18,6 +18,8 @@ while (loop == 'true'):
         print ("Username incorrect!")
 
                 #SHUTIL AND PSUTIL MODULES
+import shutil
+import psutil
 print ('\t')
                     #INPUT FUNCTION, TRY AND EXCEPT FUNCTION
 try:
@@ -35,15 +37,18 @@ def check_disk_usage(disk):
     """Verifies that there's enough free space on disk"""
     du = shutil.disk_usage(disk)
     free = du.free / du.total * 100
-    print (free)
     return free > 20
+
 def check_cpu_usage():
     """Verifies that there's enough unused CPU"""
     usage = psutil.cpu_percent(1)
+    print (f'your CPU percentage use is: {usage}')
     return usage < 75
 
+print (f'your free disk space is: {(shutil.disk_usage("/").free/shutil.disk_usage("/").total *100)}') #we have use double qoutes to avoid f-string unmatched error
+print (f'CPU PERCENTAGE: {psutil.cpu_percent(interval=1)}%')
 #If there's not enough disk, or not enough CPU, print an error
 if not check_disk_usage('/') or not check_cpu_usage():
-    print("Your Computer is UNHEALTH: Check your disk or CPU usage  ")
+    print("Your Computer is UNHEALTH: Fix your disk or CPU usage  ")
 else:
     print('Your COMPUTER IS HEALTHY----Keep it up')
