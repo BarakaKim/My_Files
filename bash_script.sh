@@ -1,29 +1,30 @@
 #!/bin/bash
+line="--------------------------------------------"
 echo "Starting at $(date)"
-echo
+echo $line
 
 echo "UPTIME"
 uptime
-echo
+echo $line
 
 echo "FREE"
 free
-echo
+echo $line
 
 echo "WHO"
 who
-echo
+echo $line
 
 echo "Finishing at $(date)"
-echo
+echo $line
 
           #ANOTHER WAY TO WRITE A BASH SCRIPT
-# echo "Starting at $(date)"; echo
+# echo "Starting at $(date)"; echo $line
 #
-# echo "UPTIME"; uptime; echo
+# echo "UPTIME"; uptime; echo $line
 #
-# echo "FREE"; free; echo
+# echo "FREE"; free; echo $line
 #
-# echo "WHO"; who; echo
+# echo "WHO"; who; echo $line
 #
-# echo "Finishing at $(date)"; echo
+# echo "Finishing at $(date)"; echo $line
