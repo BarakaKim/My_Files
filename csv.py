@@ -22,12 +22,22 @@ with open ('file.csv') as f1:
 print ('\t')
 
 #create another csv file
+# with open('students.csv', 'w', newline='') as file:
+#     writer = csv.writer(file)
+#     writer.writerow(["SNo", "Name", "Subject"])
+#     writer.writerow([1, "Ash Ketchum", "English"])
+#     writer.writerow([2, "Gary Oak", "Mathematics"])
+#     writer.writerow([3, "Brock Lesner", "Physics"])
+
+row_list = [["SNo", "Name", "Subject"],
+             [1, "Ash Ketchum", "English"],
+             [2, "Gary Oak", "Mathematics"],
+             [3, "Brock Lesner", "Physics"]]
+
 with open('students.csv', 'w', newline='') as file:
-    writer = csv.writer(file)
-    writer.writerow(["SNo", "Name", "Subject"])
-    writer.writerow([1, "Ash Ketchum", "English"])
-    writer.writerow([2, "Gary Oak", "Mathematics"])
-    writer.writerow([3, "Brock Lesner", "Physics"])
+    writer = csv.writer(file, delimiter='|')
+    writer.writerows(row_list)
+
 
 print ('READ THE STUDENT.CSV')
 print ('====================================================')
