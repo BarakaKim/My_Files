@@ -46,7 +46,25 @@ with open ('students.csv') as f2:
     for row in f2:
         print (row)
 
+
+print ('CREATE CSV FROM DICTIONARY USING DictWriter')
+print ('====================================================')
+data = {'A':'X1', 'B':'X2', 'C':'X3'}
+with open('my_file3.csv', 'a', newline='') as f:
+    writer = csv.DictWriter(f, fieldnames=data.keys())
+    writer.writeheader()
+    writer.writerow(data)
 print ('\t')
+
+print ('CREATE CSV FROM DICTIONARY USING PANDAS')
+print ('====================================================')
+x = {'Name': ['Rose','John', 'Jane', 'Mary'], 'ID': [1, 2, 3, 4], 'Department': ['Architect Group', 'Software Group', 'Design Team', 'Infrastructure'],
+      'Salary':[100000, 80000, 50000, 60000]}
+df = pd.DataFrame(x)
+print (df)
+df.to_csv ('maua.csv', index=False)
+print ('\t')
+
 print ('READ CSV USING PANDAS')
 print ('====================================================')
 a = pd.read_csv ('train.csv')
